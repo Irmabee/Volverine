@@ -76,5 +76,8 @@ def format_output_as_html(output):
     table += "</table>"
     return table
 
+eel.expose
+def clear_terminal(output):
+     output.delete(1.0)
 # Start the Eel application
 eel.start('index.html', port=8001, size=(800, 600))

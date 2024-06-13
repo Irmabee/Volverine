@@ -27,10 +27,16 @@
                 onclick="cheatSheet()" />
         </section>
 
-        <label for="plugin-container" id="plugin-search-label">Search plugins</label>
+        <label for="plugin-container" id="plugin-search-label"
+            >Search plugins</label
+        >
         <section class="container-mid">
             <div class="col-lg-2 plugin-container">
-                <input type="text" value="Search plugins" class="search" id="plugin-search" />
+                <input
+                    type="text"
+                    value="Search plugins"
+                    class="search"
+                    id="plugin-search" />
                 <div id="plugin-menu">
                     <div class="plugin-item" id="run-netscan-btn">
                         <a href="#">Netscan</a>
@@ -45,14 +51,37 @@
                         <a href="#">ApiHooks</a>
                     </div>
                 </div>
-                <input type="button" value="Clear Plugins" class="button" id="clear-plugins-btn" />
+                <input
+                    type="button"
+                    value="Clear Plugins"
+                    class="button"
+                    id="clear-plugins-btn" />
             </div>
+<<<<<<< HEAD
+            <div class="col-lg-9 output-container">
+                <input
+                    type="text"
+                    value="Search commands"
+                    class="search"
+                    id="command-search"
+                    onkeyup="filterOutput()" />
+=======
             <div class="col-lg-10 output-container">
                 <input type="text" value="Search commands" class="search" id="command-search" onkeyup="filterOutput()" />
+>>>>>>> ee4c228d9c44059441245a8462e2317df643a37f
                 <div id="file-output"></div>
                 <div class="container-bottom">
-                    <input type="button" value="Save" class="button" id="save-btn" />
-                    <input type="button" value="Clear terminal" class="button" id="clear-terminal-btn" />
+                    <input
+                        type="button"
+                        value="Save"
+                        class="button"
+                        id="save-btn" />
+                    <input
+                        type="button"
+                        value="Clear terminal"
+                        class="button"
+                        id="clear-terminal-btn"
+                        onclick="clearTerminal()" />
                 </div>
             </div>
         </section>
