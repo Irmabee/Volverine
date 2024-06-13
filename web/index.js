@@ -1,5 +1,5 @@
 document.getElementById("file-output");
-indow.onload = function () {
+window.onload = function () {
     window.resizeTo(1200, 900);
 
     const screenWidth = window.screen.width;
