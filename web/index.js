@@ -1,4 +1,5 @@
-window.onload = function () {
+document.getElementById("file-output");
+indow.onload = function () {
     window.resizeTo(1200, 900);
 
     const screenWidth = window.screen.width;
@@ -11,14 +12,13 @@ window.onload = function () {
     window.moveTo(left, top);
 };
 
-
 // Function to get the file path from the Python function
 function getPathToFile() {
     path = eel.open_file()((r) => console.log(r));
 }
 
 function clearTerminal() {
-    eel.clear_terminal()();
+    document.getElementById(file - output).innerHTML = "";
 }
 
 // Function to navigate to the CheatSheet page
