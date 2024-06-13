@@ -15,11 +15,11 @@ Language: All code comments, variable names, and method names are written in Eng
 
 ## Dependencies:
 
-pip install eel
-pip install subprocess
-pip install wxPython
-pip install reportlab
-pip install python-csv
+-   pip install eel
+-   pip install subprocess
+-   pip install wxPython
+-   pip install reportlab
+-   pip install python-csv
 
 ## Contributors:
 
