@@ -1,5 +1,5 @@
 ====================================
-volatiltiy GUI "volverine"
+Volatiltiy 3 GUI "Volverine"
 ====================================
 
 ## Description:
