@@ -38,7 +38,7 @@ def run_netscan():
     return run_volatility_command('windows.netscan.NetScan')
 
 # Function to run the MalFind plugin
-@eel.expose
+@eel.expose 
 def run_malfind():
     if not memory_dump_path:
         return "Please select a memory dump file first."
