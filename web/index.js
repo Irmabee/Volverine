@@ -18,7 +18,7 @@ function getPathToFile() {
 }
 
 function clearTerminal() {
-    document.getElementById(file - output).innerHTML = "";
+    document.getElementById("file-output").innerHTML = " ";
 }
 
 function cheatSheet() {
