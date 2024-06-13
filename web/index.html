@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Volatility</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header id="header">
+            <img id="logo" src="img/volverine-logo.png" alt="Volatility Logo" />
+        </header>
+
+        <section class="container-top">
+            <input
+                type="button"
+                value="Upload file"
+                class="col-lg-4 button"
+                id="Upload-btn"
+                onclick="getPathToFile()" />
+            <input
+                type="button"
+                value="CheatSheet"
+                class="col-lg-4 button"
+                id="CheatSheet-btn"
+                onclick="cheatSheet()" />
+        </section>
+
+        <label for="plugin-container" id="plugin-search-label">Search plugins</label>
+        <section class="container-mid">
+            <div class="col-lg-2 plugin-container">
+                <input type="text" value="Search plugins" class="search" id="plugin-search" />
+                <div id="plugin-menu">
+                    <div class="plugin-item" id="run-netscan-btn">
+                        <a href="#">Netscan</a>
+                    </div>
+                    <div class="plugin-item" id="pslist-btn">
+                        <a href="#">Pslist</a>
+                    </div>
+                    <div class="plugin-item" id="run-malfind-btn">
+                        <a href="#">Malfind</a>
+                    </div>
+                    <div class="plugin-item">
+                        <a href="#">ApiHooks</a>
+                    </div>
+                </div>
+                <input type="button" value="Clear Plugins" class="button" id="clear-plugins-btn" />
+            </div>
+            <div class="col-lg-9 output-container">
+                <input type="text" value="Search commands" class="search" id="command-search" onkeyup="filterOutput()" />
+                <div id="file-output"></div>
+                <div class="container-bottom">
+                    <input type="button" value="Save" class="button" id="save-btn" />
+                    <input type="button" value="Clear terminal" class="button" id="clear-terminal-btn" />
+                </div>
+            </div>
+        </section>
+    </body>
+    <!-- Include the Eel JavaScript library -->
+    <script type="text/javascript" src="/eel.js"></script>
+    <!-- Include the custom JavaScript file -->
+    <script src="index.js"></script>
+</html>
