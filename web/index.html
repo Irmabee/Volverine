@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Volverine</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" href="img/volverine-icon.png" type="image/x-icon" />
-    </head>
-    <body>
-        <header id="header">
-            <img id="logo" src="img/volverine-logo.png" alt="Volatility Logo" />
-        </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volverine</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/volverine-icon.png" type="image/x-icon" />
+</head>
+<body>
+    <header id="header">
+        <img id="logo" src="img/volverine-logo.png" alt="Volatility Logo" />
+    </header>
 
-        <section class="container-top">
-            <input
-                type="button"
-                value="Upload file"
-                class="col-lg-4 button"
-                id="Upload-btn"
-                onclick="getPathToFile()" />
-            <input
-                type="button"
-                value="CheatSheet"
-                class="col-lg-4 button"
-                id="CheatSheet-btn"
-                onclick="cheatSheet()" />
-        </section>
+    <section class="container-top">
+        <input
+            type="button"
+            value="Upload file"
+            class="col-lg-4 button"
+            id="Upload-btn"
+            onclick="getPathToFile()" 
+            aria-label="Upload file" />
+        <input
+            type="button"
+            value="CheatSheet"
+            class="col-lg-4 button"
+            id="CheatSheet-btn"
+            onclick="cheatSheet()" 
+            aria-label="Open CheatSheet" />
+    </section>
 
-        <label for="plugin-container" id="plugin-search-label"
-            >Search plugins</label
-        >
-        <section class="container-mid">
-            <div class="col-lg-2 plugin-container">
-                <input
-                    type="text"
-                    value="Search plugins"
-                    class="search"
-                    id="plugin-search" />
-                <div id="plugin-menu">
-                    <div class="plugin-item" id="run-netscan-btn">
-                        <a href="#">Netscan</a>
-                    </div>
-                    <div class="plugin-item" id="pslist-btn">
-                        <a href="#">Pslist</a>
-                    </div>
-                    <div class="plugin-item" id="run-malfind-btn">
-                        <a href="#">Malfind</a>
-                    </div>
-                    <div class="plugin-item">
-                        <a href="#">ApiHooks</a>
-                    </div>
+    <section class="container-mid">
+        <div class="col-lg-2 plugin-container">
+            <label for="plugin-search" id="plugin-search-label">Search plugins</label>
+            <input
+                type="text"
+                placeholder="Search plugins"
+                class="search"
+                id="plugin-search"
+                onfocus="clearPlaceholder(this)"
+                onblur="restorePlaceholder(this, 'Search plugins')" />
+            <div id="plugin-menu">
+                <div class="plugin-item" id="run-netscan-btn">
+                    <a href="#">Netscan</a>
                 </div>
+                <div class="plugin-item" id="pslist-btn">
+                    <a href="#">Pslist</a>
+                </div>
+                <div class="plugin-item" id="run-malfind-btn">
+                    <a href="#">Malfind</a>
+                </div>
+                <div class="plugin-item">
+                    <a href="#">ApiHooks</a>
+                </div>
+            </div>
+            <input
+                type="button"
+                value="Clear Plugins"
+                class="button"
+                id="clear-plugins-btn" 
+                aria-label="Clear Plugins"/>
+        </div>
+        <div class="col-lg-10 output-container">
+            <input
+                type="text"
+                placeholder="Search commands"
+                class="search"
+                id="command-search"
+                onkeyup="filterOutput()"
+                onfocus="clearPlaceholder(this)"
+                onblur="restorePlaceholder(this, 'Search commands')" />
+            <div id="file-output"></div>
+            <div class="container-bottom">
                 <input
                     type="button"
-                    value="Clear Plugins"
+                    value="Save"
                     class="button"
-                    id="clear-plugins-btn" />
-            </div>
-            <div class="col-lg-10 output-container">
+                    id="save-btn" />
                 <input
-                    type="text"
-                    value="Search commands"
-                    class="search"
-                    id="command-search"
-                    onkeyup="filterOutput()" />
-                <div id="file-output"></div>
-                <div class="container-bottom">
-                    <input
-                        type="button"
-                        value="Save"
-                        class="button"
-                        id="save-btn" />
-                    <input
-                        type="button"
-                        value="Clear terminal"
-                        class="button"
-                        id="clear-terminal-btn"
-                        onclick="clearTerminal()" />
-                </div>
+                    type="button"
+                    value="Clear terminal"
+                    class="button"
+                    id="clear-terminal-btn"
+                    onclick="clearTerminal()" />
             </div>
-        </section>
-    </body>
+        </div>
+    </section>
+
     <!-- Include the Eel JavaScript library -->
     <script type="text/javascript" src="/eel.js"></script>
     <!-- Include the custom JavaScript file -->
     <script src="index.js"></script>
+</body>
 </html>
