@@ -6,6 +6,7 @@ import os
 # Initialize Eel with the web folder
 eel.init('web')
 
+# Add path to memory dump here
 memory_dump_path = 'C:/Users/irmab/OneDrive/Desktop/Win11Dump/Win11Dump.mem'
 
 # Function to open a file dialog and set the memory dump path
