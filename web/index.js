@@ -1,3 +1,17 @@
+window.onload = function () {
+    window.resizeTo(1200, 900);
+
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    const windowWidth = 1200;
+    const windowHeight = 900;
+    const left = screenWidth / 2 - windowWidth / 2;
+    const top = screenHeight / 2 - windowHeight / 2;
+
+    window.moveTo(left, top);
+};
+
+
 // Function to get the file path from the Python function
 function getPathToFile() {
     path = eel.open_file()((r) => console.log(r));

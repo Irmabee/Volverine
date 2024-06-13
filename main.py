@@ -8,6 +8,7 @@ eel.init('web')
 
 memory_dump_path = 'C:/Users/irmab/OneDrive/Desktop/Win11Dump/Win11Dump.mem'
 
+# Function to open a file dialog and set the memory dump path
 @eel.expose
 def open_file(wildcard="*"):
     app = wx.App(None)
@@ -22,25 +23,28 @@ def open_file(wildcard="*"):
     memory_dump_path = path
     return path
 
+# Function to run the PsList plugin
 @eel.expose
 def run_pslist():
     if not memory_dump_path:
         return "Please select a memory dump file first."
     return run_volatility_command('windows.pslist.PsList')
 
-
+# Function to run the NetScan plugin
 @eel.expose
 def run_netscan():
     if not memory_dump_path:
         return "Please select a memory dump file first."
     return run_volatility_command('windows.netscan.NetScan')
 
+# Function to run the MalFind plugin
 @eel.expose
 def run_malfind():
     if not memory_dump_path:
         return "Please select a memory dump file first."
     return run_volatility_command('windows.malfind')
 
+# Function to execute a Volatility command and format the output as HTML
 def run_volatility_command(command):
     volatility_path = r'vol/vol.exe'
     try:
@@ -49,6 +53,7 @@ def run_volatility_command(command):
     except subprocess.CalledProcessError as e:
         return f"Error running {command}: {e}"
 
+# Function to format the command output as an HTML table
 def format_output_as_html(output):
     lines = output.splitlines()
     if len(lines) < 2:
