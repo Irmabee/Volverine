@@ -1,3 +1,4 @@
+document.getElementById("file-output");
 window.onload = function () {
     window.resizeTo(1200, 900);
 
@@ -11,12 +12,13 @@ window.onload = function () {
     window.moveTo(left, top);
 };
 
+// Function to get the file path from the Python function
 function getPathToFile() {
     path = eel.open_file()((r) => console.log(r));
 }
 
 function clearTerminal() {
-    eel.clear_terminal()();
+    document.getElementById(file - output).innerHTML = "";
 }
 
 function cheatSheet() {
@@ -46,6 +48,14 @@ document.getElementById("run-malfind-btn").addEventListener("click", () => {
     });
 });
 
+// Add event listener for the "Run Pstree" button
+document.getElementById("pstree-btn").addEventListener("click", () => {
+    eel.run_pstree()((output) => {
+        document.getElementById("file-output").innerHTML = output;
+    });
+});
+
+// Function to filter table output
 function filterOutput() {
     let input = document.getElementById("command-search");
     let filter = input.value.toLowerCase();

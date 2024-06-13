@@ -30,6 +30,12 @@ def run_pslist():
         return "Please select a memory dump file first."
     return run_volatility_command('windows.pslist.PsList')
 
+@eel.expose
+def run_pstree():
+    if not memory_dump_path:
+        return "Please select a memory dump file first."
+    return run_volatility_command('windows.pstree')
+
 # Function to run the NetScan plugin
 @eel.expose
 def run_netscan():
@@ -76,8 +82,6 @@ def format_output_as_html(output):
     table += "</table>"
     return table
 
-eel.expose
-def clear_terminal(output):
-     output.delete(1.0)
+
 # Start the Eel application
 eel.start('index.html', port=8001, size=(800, 600))
