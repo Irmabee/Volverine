@@ -54,6 +54,13 @@ document.getElementById("run-malfind-btn").addEventListener("click", () => {
     });
 });
 
+// Add event listener for the "Run Pstree" button
+document.getElementById("pstree-btn").addEventListener("click", () => {
+    eel.run_pstree()((output) => {
+        document.getElementById("file-output").innerHTML = output;
+    });
+});
+
 // Function to filter table output
 function filterOutput() {
     let input = document.getElementById("command-search");
