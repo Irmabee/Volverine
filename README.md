@@ -6,18 +6,20 @@ volatiltiy GUI "volverine"
 
 GitHub repository for all the code used in the Volatility GUI
 
+To ensure the program functions correctly, you need to add the memory dump path in main.py file.
+If vol.exe (Volatility 3) fails to execute, adjust the path to your own directory.
+
 ## Conventions Used:
 
-Naming Convention: Underscore naming conventions are used throughout the code.
 Language: All code comments, variable names, and method names are written in English.
 
 ## Dependencies:
 
-pip install tkinter
 pip install eel
 pip install subprocess
-pip install PyQt5
-pip install
+pip install wxPython
+pip install reportlab
+pip install python-csv
 
 ## Contributors:
 
